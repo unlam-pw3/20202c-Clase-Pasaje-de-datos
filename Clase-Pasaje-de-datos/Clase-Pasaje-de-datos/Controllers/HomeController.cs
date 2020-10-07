@@ -22,5 +22,27 @@ namespace Clase_Pasaje_de_datos.Controllers
 
             return View();
         }
+
+        public ActionResult Ejemplo_TempData()
+        {
+            //los valores quedan guardados por un request extra
+            if (TempData["HoraActual"] == null)
+            {
+                //Si viene de un redirect donde se le asigno el valor de tempdata, va a ser distinto de null
+                TempData["HoraActual"] = DateTime.Now.ToString("hh-mm-ss");
+            }
+
+            return RedirectToAction("Ejemplo_TempDataRedirect");
+        }
+
+        public ActionResult Ejemplo_TempDataRedirect()
+        {
+            if (TempData["HoraActual"] == null)
+            {
+                //Si viene de un redirect donde se le asigno el valor de tempdata, va a ser distinto de null
+                TempData["HoraActual"] = DateTime.Now.ToString("hh-mm-ss");
+            }
+            return View();
+        }
     }
 }
