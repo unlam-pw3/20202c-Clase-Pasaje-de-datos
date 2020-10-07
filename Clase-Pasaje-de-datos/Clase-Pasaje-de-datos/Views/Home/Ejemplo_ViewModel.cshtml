@@ -1,0 +1,18 @@
+﻿@model Clase_Pasaje_de_datos.Models.UsuarioVM
+@{
+    ViewBag.Title = "Ejemplo_ViewModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ejemplo_ViewModel</h2>
+<div>
+    <img src="@Model.FotoPerfil" alt="@Model.NombreCompleto" height="60" />
+</div>
+
+<div>
+    Nombre Completo: @Model.NombreCompleto
+</div>
+<div>
+    Rol: @Model.Rol
+</div>
+
