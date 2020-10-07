@@ -6,7 +6,7 @@
 
 <h2>Ejemplo_Session</h2>
 
-@foreach (Entidades.Serie serie in Clase_Pasaje_de_datos.Helpers.SessionHelper.SeriesRecomendadas )
+@foreach (Entidades.Serie serie in Clase_Pasaje_de_datos.Helpers.SessionHelper.SeriesRecomendadas)
 {
 
     <div><strong>Nombre:</strong> @serie.Nombre</div>
@@ -17,6 +17,7 @@
             <span>@plataforma.ToString()</span>
         }
     </div>
+    <a href="/home/ejemplo_session/@serie.Nombre">Agregar a Favoritas</a>
     <br />
     <br />
 }

@@ -8,11 +8,13 @@
 
 <table>
     <tr>
+        <th>Nombre</th>
         <th>Lugar Almacenamiento</th>
         <th>Valor</th>
     </tr>
 
     <tr>
+        <td>SeriesRecomendadas</td>
         <td>Session</td>
         <td>
             @foreach (Entidades.Serie serie in Clase_Pasaje_de_datos.Helpers.SessionHelper.SeriesRecomendadas)
@@ -32,5 +34,21 @@
 
         </td>
     </tr>
+    <tr>
+        <td>Series Favoritas</td>
+        <td>Session</td>
+        <td>
+            @foreach (string serie in Clase_Pasaje_de_datos.Helpers.SessionHelper.MisSeriesFavoritas)
+            {
+
+                <div><strong>Nombre:</strong> @serie</div>
+                <br />
+                <br />
+            }
+
+        </td>
+    </tr>
+
+
 </table>
 

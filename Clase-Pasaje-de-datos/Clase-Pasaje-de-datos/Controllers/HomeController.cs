@@ -59,8 +59,16 @@ namespace Clase_Pasaje_de_datos.Controllers
             return View(usuarioActual);
         }
 
-        public ActionResult Ejemplo_Session()
+        public ActionResult Ejemplo_Session(string id)
         {
+            if (!string.IsNullOrEmpty(id))
+            {
+                if (!SessionHelper.MisSeriesFavoritas.Contains(id))
+                {
+                    SessionHelper.MisSeriesFavoritas.Add(id);
+                }
+            }
+
             List<Serie> seriesRecomendadas = new List<Serie>();
             Serie serie1 = new Serie()
             {

@@ -25,5 +25,23 @@ namespace Clase_Pasaje_de_datos.Helpers
                 HttpContext.Current.Session["SeriesRecomendadas"] = value;
             }
         }
+
+        public static List<string> MisSeriesFavoritas
+        {
+            get
+            {
+                if (HttpContext.Current.Session["MisSeriesFavoritas"] == null)
+                {
+                    HttpContext.Current.Session["MisSeriesFavoritas"] = new List<string>();
+                }
+
+                return (List<string>)HttpContext.Current.Session["MisSeriesFavoritas"];
+            }
+
+            set
+            {
+                HttpContext.Current.Session["MisSeriesFavoritas"] = value;
+            }
+        }
     }
 }
