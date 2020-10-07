@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Ejemplo ViewBag ViewData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int dayOfYear = ((DateTime)ViewData["FechaCompleta"]).DayOfYear;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    Fecha Actual: @ViewBag.FechaActual
+</div>
+
+<div>
+    Hora Actual: @ViewData["HoraActual"]
+</div>
+
+<div>
+    Hoy es el día nro @dayOfYear del año
+</div>
