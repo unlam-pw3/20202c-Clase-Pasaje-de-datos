@@ -1,4 +1,6 @@
-﻿using Clase_Pasaje_de_datos.Models;
+﻿using Clase_Pasaje_de_datos.Helpers;
+using Clase_Pasaje_de_datos.Models;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +57,41 @@ namespace Clase_Pasaje_de_datos.Controllers
             usuarioActual.Rol = "Actor ppal";
 
             return View(usuarioActual);
+        }
+
+        public ActionResult Ejemplo_Session()
+        {
+            List<Serie> seriesRecomendadas = new List<Serie>();
+            Serie serie1 = new Serie()
+            {
+                Nombre = "Modern Family",
+                Plataformas = new List<Serie.Plataforma>() { Serie.Plataforma.Netflix}
+            };
+            seriesRecomendadas.Add(serie1);
+            
+            Serie serie2 = new Serie()
+            {
+                Nombre = "Cobra Kai",
+                Plataformas = new List<Serie.Plataforma>() { Serie.Plataforma.Netflix }
+            };
+            seriesRecomendadas.Add(serie2);
+
+            Serie serie3 = new Serie()
+            {
+                Nombre = "La Purga",
+                Plataformas = new List<Serie.Plataforma>() { Serie.Plataforma.AmazonPrime }
+            };
+            seriesRecomendadas.Add(serie3);
+
+            //Session["SeriesRecomendadas"] = seriesRecomendadas;
+            SessionHelper.SeriesRecomendadas = seriesRecomendadas;
+
+            return View();
+        }
+
+        public ActionResult TablaGeneral()
+        {
+            return View();
         }
     }
 }

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Ejemplo_Session";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ejemplo_Session</h2>
+
+@foreach (Entidades.Serie serie in Clase_Pasaje_de_datos.Helpers.SessionHelper.SeriesRecomendadas )
+{
+
+    <div><strong>Nombre:</strong> @serie.Nombre</div>
+    <div>
+        <strong>Plataformas:</strong>
+        @foreach (var plataforma in serie.Plataformas)
+        {
+            <span>@plataforma.ToString()</span>
+        }
+    </div>
+    <br />
+    <br />
+}
+
+
