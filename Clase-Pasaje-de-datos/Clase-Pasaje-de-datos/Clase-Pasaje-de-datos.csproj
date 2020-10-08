@@ -98,6 +98,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CookiesHelper.cs" />
+    <Compile Include="Helpers\CacheHelper.cs" />
     <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Models\UsuarioVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,6 +115,8 @@
     <Content Include="Views\Home\Ejemplo_Session.cshtml" />
     <Content Include="Views\Home\TablaGeneral.cshtml" />
     <Content Include="Views\Home\Ejemplo_Cookies.cshtml" />
+    <Content Include="Views\Home\Ejemplo_Cache.cshtml" />
+    <Content Include="Views\Home\Ejemplo_OutputCache.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

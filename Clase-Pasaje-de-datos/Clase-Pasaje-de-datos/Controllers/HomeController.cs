@@ -111,6 +111,25 @@ namespace Clase_Pasaje_de_datos.Controllers
             return View();
         }
 
+
+        public ActionResult Ejemplo_Cache()
+        {
+            CookiesHelper.AgregarPaginaVisitada("Ejemplo_Cache");
+            if (CacheHelper.MisSeriesFavoritasCache.Count == 0)
+            {
+                Serie serie = new Serie() { Nombre = $"Breaking Bad Temporada {DateTime.Now.Second}" };
+                CacheHelper.MisSeriesFavoritasCache.Add(serie);
+            }
+            
+            return View();
+        }
+        [OutputCache(Duration = 10, VaryByParam = "none", VaryByCustom = "browser")]
+        public ActionResult Ejemplo_OutputCache()
+        {
+            CookiesHelper.AgregarPaginaVisitada("Ejemplo_Cache");
+            return View();
+        }
+
         public ActionResult TablaGeneral()
         {
             CookiesHelper.AgregarPaginaVisitada("TablaGeneral");

@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Ejemplo_Cache";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ejemplo_Cache</h2>
+
+@foreach (Entidades.Serie serie in Clase_Pasaje_de_datos.Helpers.CacheHelper.MisSeriesFavoritasCache)
+{
+    <div>@serie.Nombre</div>
+}
