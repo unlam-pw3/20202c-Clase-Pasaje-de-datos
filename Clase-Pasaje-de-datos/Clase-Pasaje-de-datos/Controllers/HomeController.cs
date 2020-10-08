@@ -14,11 +14,14 @@ namespace Clase_Pasaje_de_datos.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            CookiesHelper.AgregarPaginaVisitada("Index");
             return View();
         }
 
         public ActionResult Ejemplo_ViewBagViewData()
         {
+            CookiesHelper.AgregarPaginaVisitada("Ejemplo_ViewBagViewData");
+
             ViewBag.FechaActual = DateTime.Now.ToString("dd-MM-yyyy");
             ViewData["HoraActual"] = DateTime.Now.ToString("hh-mm-ss");
             ViewData["FechaCompleta"] = DateTime.Now;
@@ -28,6 +31,7 @@ namespace Clase_Pasaje_de_datos.Controllers
 
         public ActionResult Ejemplo_TempData()
         {
+            CookiesHelper.AgregarPaginaVisitada("Ejemplo_TempData");
             //los valores quedan guardados por un request extra
             if (TempData["HoraActual"] == null)
             {
@@ -40,6 +44,7 @@ namespace Clase_Pasaje_de_datos.Controllers
 
         public ActionResult Ejemplo_TempDataRedirect()
         {
+            CookiesHelper.AgregarPaginaVisitada("Ejemplo_TempDataRedirect");
             if (TempData["HoraActual"] == null)
             {
                 //Si viene de un redirect donde se le asigno el valor de tempdata, va a ser distinto de null
@@ -50,6 +55,7 @@ namespace Clase_Pasaje_de_datos.Controllers
 
         public ActionResult Ejemplo_ViewModel()
         {
+            CookiesHelper.AgregarPaginaVisitada("Ejemplo_ViewModel");
             var usuarioActual = new UsuarioVM();
             usuarioActual.Id = 1;
             usuarioActual.NombreCompleto = "Atreyu";
@@ -61,6 +67,7 @@ namespace Clase_Pasaje_de_datos.Controllers
 
         public ActionResult Ejemplo_Session(string id)
         {
+            CookiesHelper.AgregarPaginaVisitada("Ejemplo_Session");
             if (!string.IsNullOrEmpty(id))
             {
                 if (!SessionHelper.MisSeriesFavoritas.Contains(id))
@@ -73,10 +80,10 @@ namespace Clase_Pasaje_de_datos.Controllers
             Serie serie1 = new Serie()
             {
                 Nombre = "Modern Family",
-                Plataformas = new List<Serie.Plataforma>() { Serie.Plataforma.Netflix}
+                Plataformas = new List<Serie.Plataforma>() { Serie.Plataforma.Netflix }
             };
             seriesRecomendadas.Add(serie1);
-            
+
             Serie serie2 = new Serie()
             {
                 Nombre = "Cobra Kai",
@@ -97,8 +104,16 @@ namespace Clase_Pasaje_de_datos.Controllers
             return View();
         }
 
+        public ActionResult Ejemplo_Cookies()
+        {
+            CookiesHelper.AgregarPaginaVisitada("Ejemplo_Cookies");
+            
+            return View();
+        }
+
         public ActionResult TablaGeneral()
         {
+            CookiesHelper.AgregarPaginaVisitada("TablaGeneral");
             return View();
         }
     }

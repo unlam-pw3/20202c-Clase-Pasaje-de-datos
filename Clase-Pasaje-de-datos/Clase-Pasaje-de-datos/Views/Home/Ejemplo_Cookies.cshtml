@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Ejemplo_Cookies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ejemplo_Cookies</h2>
+@foreach (string paginaVisitada in Clase_Pasaje_de_datos.Helpers.CookiesHelper.ObtenerPaginasVisitadas())
+{
+    <div>
+        @paginaVisitada
+    </div>
+}

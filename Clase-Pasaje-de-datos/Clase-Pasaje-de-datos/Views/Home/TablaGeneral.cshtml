@@ -48,6 +48,22 @@
 
         </td>
     </tr>
+    <tr>
+        <td>Paginas visitadas</td>
+        <td>Cookies</td>
+        <td>
+            @foreach (string pagina in Clase_Pasaje_de_datos.Helpers.CookiesHelper.ObtenerPaginasVisitadas())
+            {
+
+                <div>
+                    @pagina
+                </div>
+                <br />
+                <br />
+            }
+
+        </td>
+    </tr>
 
 
 </table>
